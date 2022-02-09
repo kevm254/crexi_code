@@ -15,7 +15,8 @@ export class ConverterUtil {
                     city: userResult?.location?.city,
                     state: userResult?.location?.state,
                     email: userResult?.email,
-                    dateOfBirth: userResult?.dob.date
+                    dateOfBirth: userResult?.dob.date,
+                    id: userResult?.id?.value
                 }
             });
         } else {

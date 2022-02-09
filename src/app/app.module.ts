@@ -7,6 +7,8 @@ import {GlobalService} from "./services/global.service";
 import { UserProfileListComponent } from './components/user-profile-list/user-profile-list.component';
 import { UserProfileDetailComponent } from './components/user-profile-list/user-profile-detail/user-profile-detail.component';
 import {MatCardModule} from "@angular/material/card";
+import {LayoutModule} from "@core/layout/layout.module";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
     bootstrap: [
@@ -24,7 +26,9 @@ import {MatCardModule} from "@angular/material/card";
         BrowserModule,
         CoreModule,
         FeaturesModule,
-        MatCardModule
+        MatCardModule,
+        LayoutModule,
+        MatListModule
     ]
 })
 export class AppModule { }

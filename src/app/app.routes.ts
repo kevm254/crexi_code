@@ -16,7 +16,11 @@ export const appRoutes: Routes = [
     },
     {
         component: UserProfileDetailComponent,
-        path: 'user-profile-list/:id'
+        path: 'user-profile-detail/:id'
+    },
+    {
+        component: UserProfileDetailComponent,
+        path: 'user-profile-detail'
     },
     {
         component: PageNotFoundComponent,

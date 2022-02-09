@@ -8,4 +8,5 @@ export interface User {
     state: string;
     email: string;
     dateOfBirth: string;
+    id: string;
 }

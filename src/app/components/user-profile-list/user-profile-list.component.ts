@@ -6,6 +6,7 @@ import {GlobalService} from "../../services/global.service";
 import {FetchedUser} from "../../models/FetchedUser.model";
 import {ConverterUtil} from "../../utils/converter.utils";
 import {User} from "../../models/User.model";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-user-profile-list',
@@ -17,28 +18,18 @@ export class UserProfileListComponent extends BaseComponent implements OnInit, O
 
     constructor(
         private store: Store<IGlobalState>,
-        private globalService: GlobalService
+        private globalService: GlobalService,
+        private router: Router
     ) {
         super(store);
     }
 
     ngOnInit(): void {
         this.registerUserSub();
-        this.fetchUsersAndUpdateStore();
     }
 
     ngOnDestroy() {
         super.ngOnDestroy();
-    }
-
-    fetchUsersAndUpdateStore() {
-        this.globalService.GetUsers(10).subscribe((fetchedUsers: FetchedUser) => {
-            this.updateStoreWithUsers(fetchedUsers);
-        })
-    }
-
-    updateStoreWithUsers(fetchedUser: FetchedUser) {
-        this.reg$(this.globalCommands.Api.UpdateUsers(ConverterUtil.convertFetchedUserToUser(fetchedUser)));
     }
 
     registerUserSub() {
@@ -49,4 +40,11 @@ export class UserProfileListComponent extends BaseComponent implements OnInit, O
         );
     }
 
+    navigateToProfileDetail(userId: string) {
+        if (userId) {
+            this.router.navigate([`/user-profile-detail/${userId}`]);
+        } else {
+            this.router.navigate(['/user-profile-detail']);
+        }
+    }
 }

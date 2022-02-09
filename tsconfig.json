@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": false,
+    "importHelpers": true,
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "module": "es2020",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "outDir": "./dist",
+    "paths": {
+        "@auth/*": ["src/app/core/auth/*"],
+        "@core/*": ["src/app/core/*"],
+        "@features/*": ["src/app/features/*"],
+        "@interfaces": ["src/app/app.interfaces"],
+        "@store/*": ["src/app/store/*"],
+        "content/*": ["src/content/*"]
+    },
+    "sourceMap": true,
+    "target": "es2015"
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}
